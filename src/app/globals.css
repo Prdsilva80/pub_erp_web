@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 222 47% 11%;
+  --foreground: 213 31% 91%;
+  --card: 222 47% 13%;
+  --card-foreground: 213 31% 91%;
+  --popover: 222 47% 13%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 43 58% 54%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 222 47% 18%;
+  --secondary-foreground: 213 31% 91%;
+  --muted: 222 47% 18%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 43 58% 54%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 63% 55%;
+  --destructive-foreground: 213 31% 91%;
+  --border: 222 47% 20%;
+  --input: 222 47% 18%;
+  --ring: 43 58% 54%;
+  --radius: 0.5rem;
+
+  /* PubERP brand */
+  --gold: #C9A84C;
+  --navy: #1A1A2E;
+  --navy-light: #16213E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
